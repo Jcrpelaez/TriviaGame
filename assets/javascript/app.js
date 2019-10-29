@@ -16,7 +16,8 @@ $("#start").click(function() {
 });
 var questions = [
   {
-    question:"What was the name of Nintendo's first portable video game system?",
+    question:
+      "What was the name of Nintendo's first portable video game system?",
     answers: ["Game Boy", "Nintendo DS", "Virtual Boy", "Game Boy Color"],
     correctAnswer: "Game Boy"
   },
@@ -41,14 +42,13 @@ var questions = [
     correctAnswer: "Plumber"
   },
   {
-    question: "What was not on Fox McClouds squadron?",
+    question: "Who was not on Fox McClouds squadron?",
     answers: ["Falco", "Peppy", "Wolfen", "Slippy"],
     correctAnswer: "Wolfen"
   },
   {
-    question:
-      "What was the name of Nintendo's first portable video game system?",
-    answers: ["Game Boy", "Nintendo DS", "Virtual Boy", "Game Boy Color"],
-    correctAnswer: "Game Boy"
+    question: "What was the n64's 1st first person shooter game?",
+    answers: ["Turok", "Goldeneye 007", "Jet Force Gemini", "Duke Nukem"],
+    correctAnswer: "Turok"
   }
 ];
