@@ -1,5 +1,7 @@
 //  Created function to begin the game
 $("#start").click(function() {
+  $("#start").remove();
+
   for (var i = 0; i < questions.length; i++) {
     $("#subwrapper").append("<h2>" + questions[i].question + "</h2>");
     for (var j = 0; j < questions[i].answers.length; j++) {
@@ -52,3 +54,31 @@ var questions = [
     correctAnswer: "Turok"
   }
 ];
+var game = {
+  correct: 0,
+  incorrect: 0,
+  counter: 120,
+  countdown: function() {
+    game.counter--;
+    $("#counter").html(game.counter);
+    if (game.counter <= 0) {
+      console.log("Time is up!");
+      game.done();
+    }
+  },
+  start: function() {
+    for (var i = 0; i < questions.length; i++) {
+      $("#subwrapper").append("<h2>" + questions[i].question + "</h2>");
+      for (var j = 0; j < questions[i].answers.length; j++) {
+        $("#subwrapper").append(
+          "<input type ='radio' name = 'question-" +
+            i +
+            "'value='" +
+            questions[i].answers[j] +
+            "'>" +
+            questions[i].answers[j]
+        );
+      }
+    }
+  }
+};
