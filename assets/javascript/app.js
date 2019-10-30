@@ -1,21 +1,8 @@
 //  Created function to begin the game
 $("#start").click(function() {
-  $("#start").remove();
-
-  for (var i = 0; i < questions.length; i++) {
-    $("#subwrapper").append("<h2>" + questions[i].question + "</h2>");
-    for (var j = 0; j < questions[i].answers.length; j++) {
-      $("#subwrapper").append(
-        "<input type ='radio' name = 'question-" +
-          i +
-          "'value='" +
-          questions[i].answers[j] +
-          "'>" +
-          questions[i].answers[j]
-      );
-    }
-  }
+  game.start();
 });
+// created variable to hold questions and answers
 var questions = [
   {
     question:
@@ -54,6 +41,7 @@ var questions = [
     correctAnswer: "Turok"
   }
 ];
+// created timer variable and function
 var game = {
   correct: 0,
   incorrect: 0,
@@ -66,7 +54,10 @@ var game = {
       game.done();
     }
   },
+  // created start game function
   start: function() {
+    timer = setInterval(game.countdown, 1000);
+
     for (var i = 0; i < questions.length; i++) {
       $("#subwrapper").append("<h2>" + questions[i].question + "</h2>");
       for (var j = 0; j < questions[i].answers.length; j++) {
